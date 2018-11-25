@@ -11,8 +11,8 @@ export class ServersComponent implements OnInit {
   allowNewServer = false;
 
   serverCreationStatus  = 'No server has been created. To add a new server, input its name above and press \"Add Server\"';
-  serverName = '';
-  inputServerName = '';
+  serverName = 'Ditto';
+  inputServerName = 'Gee';
 
 
   constructor() {
