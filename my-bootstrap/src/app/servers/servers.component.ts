@@ -13,6 +13,7 @@ export class ServersComponent implements OnInit {
   serverCreationStatus  = 'No server has been created. To add a new server, input its name above and press \"Add Server\"';
   serverName = 'Ditto';
   inputServerName = 'Gee';
+  serverCreated = false;
 
 
   constructor() {
@@ -28,9 +29,10 @@ export class ServersComponent implements OnInit {
 
 
   onCreateServer() {
-    if (this.serverCreationStatus.length === 0) {
+    if (this.serverName.length === 0) {
       this.serverCreationStatus = 'The server does not have a name. Please try again.';
     } else {
+      this.serverCreated = true;
       this.serverCreationStatus = 'The server \"' + this.inputServerName + '\" has been created.';
     }
 
