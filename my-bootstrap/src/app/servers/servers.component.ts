@@ -12,6 +12,7 @@ export class ServersComponent implements OnInit {
 
   serverCreationStatus  = 'No server has been created. To add a new server, input its name above and press \"Add Server\"';
   serverName = '';
+  inputServerName = '';
 
 
   constructor() {
@@ -30,14 +31,14 @@ export class ServersComponent implements OnInit {
     if (this.serverCreationStatus.length === 0) {
       this.serverCreationStatus = 'The server does not have a name. Please try again.';
     } else {
-      this.serverCreationStatus = 'The server' + this.serverName + 'was created';
+      this.serverCreationStatus = 'The server \"' + this.inputServerName + '\" has been created.';
     }
 
   }
 
   onUpdateServerName(event: Event) {
-
-    this.serverName = ((<HTMLInputElement>event.target).value.length === 0) ? '' : 'New server name: ' + (<HTMLInputElement>event.target).value;
+    this.inputServerName = (<HTMLInputElement>event.target).value;
+    this.serverName = ((<HTMLInputElement>event.target).value.length === 0) ? '' : 'New server name: ' + this.inputServerName;
 
   }
 }
