@@ -1,1 +1,7 @@
-<p [ngStyle]="{backgroundColor: getColor()}">{{ 'Server' }} with ID {{ serverID }} is {{ getServerStatus() + ' unfortunately.'}}</p>
+<p [ngStyle]="{backgroundColor: getColor()}"
+   [ngClass]="{online: serverStatus === 'online'}">
+  {{ 'Server' }} with ID {{ serverID }} is {{ getServerStatus() + ' unfortunately.'}}
+</p>
+
+<!-- [ngStyle]: within it, you can encompass, ideally, one line of JS code  -->
+<!-- [ngClass]="{online: serverStatus === 'online'}": attach online class declared if the server status is online  -->

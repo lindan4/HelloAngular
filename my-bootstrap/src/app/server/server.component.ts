@@ -1,14 +1,20 @@
 import { Component } from '@angular/core';
 
 @Component({
-  'selector': 'app-server',
-  'templateUrl': './server.component.html'
+  selector: 'app-server',
+  templateUrl: './server.component.html',
+  styles: [`
+    .online {
+      color: white;
+    }
+  `]
 })
 export class ServerComponent {
 
   serverID = 4200;
   serverStatus = 'offline';
 
+  //Called when component is created
   constructor() {
     this.serverStatus = (Math.random() > 0.5) ? 'online' : 'offline';
   }
